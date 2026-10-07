@@ -63,3 +63,6 @@ test-results/
 
 # Misc
 *.local
+
+# Local visual QA artifacts and isolated browser profile
+.local-qa/

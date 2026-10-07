@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Box</title>
+</head>
+
+<body>
+
+    <div>
+        <input type="checkbox" name="check" value="C++"> C++
+        <input type="checkbox" name="check" value="JavaScript"> JavaScript
+        <input type="checkbox" name="check" value="Python"> Python
+    </div>
+
+    <h1 id="result"></h1>
+
+    <script>
+        var check = document.getElementsByName("check");
+        var result = document.getElementById("result");
+        var skill = [];
+
+        for (var count = 0; count < check.length; count++) {
+
+            check[count].addEventListener("click", function (event) {
+                if (event.target.checked) {
+                    console.log("Checked");
+                    skill.push(event.target.value);
+                    result.textContent = skill.join(", ");
+                } else {
+                    console.log("Unchecked");
+                    var index = skill.indexOf(event.target.value);
+                    if (index !== -1) {
+                        skill.splice(index, 1);
+                    }
+                    result.textContent = skill.join(", ");
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

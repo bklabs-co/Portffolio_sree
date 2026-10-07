@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // Single source of truth for all site content.
 // Content carried over from the existing portfolio.
-// Replace the TODO placeholders with real links/assets before deploy.
+// Contact values are retained from the existing portfolio; confirm them before publishing.
 // ─────────────────────────────────────────────────────────────
 
 export const profile = {
@@ -40,19 +40,7 @@ export const services = [
   { title: 'Creative production', body: 'Brief to delivery — concept development, visual direction, asset prep and production support.', tags: ['Creative direction', 'Visual storytelling', 'Production'] },
 ]
 
-export const categories = ['All', 'Video Editing', 'Motion Design', 'Graphic Design', 'UI / UX']
-
-// `image`: drop a file in src/assets, import it, and set it here. null renders a designed placeholder.
-// `grade`: a signature colour-grade for the card, like a colourist's LUT per project —
-// keeps every case study visually distinct instead of one repeated accent wash.
-export const projects = [
-  { id: 'product-film', category: 'Video Editing', title: 'Product advertisement & brand film', summary: 'Story-driven editing, pacing, sound design, B-roll and motion-led product communication.', year: '2025', tags: ['Premiere Pro', 'Sound design'], size: 'wide', image: null, grade: { from: '#0b6478', to: '#0a2a3a', tint: '#5eead4' } },
-  { id: 'landing-ui', category: 'UI / UX', title: 'Product landing page UI', summary: 'Interface structure, hierarchy and a conversion-focused visual direction.', year: '2025', tags: ['Figma', 'Responsive'], size: 'tall', image: null, grade: { from: '#4f46e5', to: '#7c3aed', tint: '#c4b5fd' } },
-  { id: 'social-system', category: 'Graphic Design', title: 'Social media & brand creatives', summary: 'Campaign creatives, promotional posts and digital ads built for visual consistency.', year: '2025', tags: ['Photoshop', 'Illustrator'], size: 'regular', image: null, grade: { from: '#15803d', to: '#0a3b20', tint: '#86efac' } },
-  { id: 'kinetic-type', category: 'Motion Design', title: 'Motion graphics & kinetic type', summary: 'Animated typography, transitions and title treatments for short-form content.', year: '2025', tags: ['After Effects'], size: 'regular', image: null, grade: { from: '#3b0764', to: '#150826', tint: '#e9d5ff' } },
-  { id: 'wedding-film', category: 'Video Editing', title: 'Wedding & event highlight film', summary: 'Emotional storytelling, music sync, cinematic pacing and finished colour.', year: '2024', tags: ['Premiere Pro', 'Colour'], size: 'wide', image: null, grade: { from: '#0369a1', to: '#0f2436', tint: '#7dd3fc' } },
-  { id: 'brand-identity', category: 'Graphic Design', title: 'Logo & brand identity system', summary: 'Logo concepts, typography, colour direction and practical brand collateral.', year: '2024', tags: ['Illustrator', 'Identity'], size: 'tall', image: null, grade: { from: '#78350f', to: '#2b1608', tint: '#fcd34d' } },
-]
+export { portfolioCategories as categories, portfolioProjects as projects } from './portfolio'
 
 export const experience = [
   {

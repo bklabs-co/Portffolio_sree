@@ -1,0 +1,76 @@
+<style>
+    .nameError,
+    .emailError,
+    .PhoneError {
+        color: red;
+        display: none;
+    }
+</style>
+
+
+<h1 style="font-weight: 800;"> Form Validation Example</h1>
+
+<div class="container">
+
+    <form action="">
+        <input type="text" placeholder="Name" required id="name">
+        <span class="nameError">Name must contains only letter</span>
+        <br>
+        <input type="email" placeholder="Email" required id="email">
+        <span class="emailError">Please Provoid vaild Gmail Address </span>
+
+        <br>
+        <input type="Phone" placeholder="Phone" required id="Phone">
+        <span class="PhoneError"> Phone Number Must Contains Only 10 digits</span>
+        <br>
+        <input type="submit" id="submit">
+    </form>
+</div>
+
+<script>
+    var submit = document.getElementById("submit")
+    submit.addEventListener("click", function () {
+        event.preventDefault()
+
+
+
+        var nameRegex = /^[a-zA-Z]+$/
+        var emailRegex = /^[a-zA-Z0-9]+@gmail.com/
+        var phoneRegex = /^\d{10}$/
+
+        var name = document.getElementById("name")
+        var email = document.getElementById("email")
+        var Phone = document.getElementById("Phone")
+
+        var validate = true
+
+        if (nameRegex.test(name.value) == false) {
+            document.querySelector(".nameError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".nameError").style.display = "none"
+        }
+
+        if (emailRegex.test(email.value) == false) {
+            document.querySelector(".emailError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".emailError").style.display = "none"
+        }
+
+        if (phoneRegex.test(Phone.value) == false) {
+            document.querySelector(".PhoneError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".PhoneError").style.display = "none"
+        }
+
+        if (validate == true) {
+            alert("Form Submitted Successfully")
+        }
+
+    })
+</script>

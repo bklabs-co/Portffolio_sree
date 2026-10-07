@@ -5,10 +5,13 @@ export function useScrollSpy(ids, offset = 130) {
   useEffect(() => {
     const onScroll = () => {
       let current = ids[0]
+      let closest = -Infinity
       for (const id of ids) {
         const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= offset) current = id
+        const top = el?.getBoundingClientRect().top
+        if (top <= offset && top > closest) { current = id; closest = top }
       }
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 3) current = ids[ids.length - 1]
       setActive(current)
     }
     onScroll()

@@ -1,60 +1,68 @@
-# Sree Ruban — Portfolio (React + Vite)
+﻿# Sree Ruban — Creative Portfolio
 
-Animated dark portfolio: React 18, Vite 5, Tailwind CSS 3, Framer Motion, Lucide React.
-Single page, anchored sections, no router.
+An existing React 18 / Vite 5 portfolio redesigned with an editorial charcoal,
+ivory and warm orange visual system. Uses the existing Tailwind CSS, Framer
+Motion and Lucide React dependencies. Single-page section navigation; no router,
+server architecture or new runtime dependencies.
 
 ## Run
 
-```bash
+```sh
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # -> dist/
+npm run dev
+npm run build
+npm run preview
 ```
 
-## Structure
+On Windows PowerShell, use `npm.cmd` if the local execution policy blocks
+`npm.ps1`. Production output is in `dist/`. No lint or automated test script is
+configured in the original package.
 
-```
-src/
-  data/site.js          all copy, projects, experience, skills, links
-  hooks/useScrollSpy.js scroll-spy + scrolled-state
-  components/
-    Primitives.jsx      Reveal, Stagger, SplitText, Magnetic, Section, Pill
-    Chrome.jsx          Intro curtain, CursorGlow, ScrollProgress
-    Navbar.jsx          sticky, blur-on-scroll, spring pill indicator, mobile panel
-    Hero.jsx            split-text headline, scroll parallax, floating badges
-    Marquee.jsx  About.jsx  Services.jsx
-    Work.jsx  ProjectCard.jsx   filter + 3D tilt + cursor sheen
-    Experience.jsx  Skills.jsx  Contact.jsx  Footer.jsx
-  App.jsx  main.jsx  index.css
-```
+## Content and components
 
-## Motion layer
+- `src/data/site.js`: original profile, About copy, services, process, experience,
+  toolkit and contact information.
+- `src/data/portfolio.js`: real projects, artwork collections, image descriptions,
+  video metadata and asset paths.
+- `src/data/asset-previews.json`: mapping from originals to optimized WebP variants.
+- `src/components/Tilt.jsx` and `ProjectCard.jsx`: reusable spring tilt and 3D card
+  faces, with hover, keyboard and touch interaction.
+- `src/components/MediaViewer.jsx` and `Modal.jsx`: image galleries, zoom,
+  scrollable long-page previews and video playback in accessible native dialogs.
+- `CreativeShowcase.jsx`, `VideoShowcase.jsx`, `BrandShowcase.jsx`: dedicated,
+  media-specific showcases.
+- `src/index.css` and `src/responsive.css`: visual system and viewport overrides.
 
-| Where | Effect |
-|---|---|
-| Page load | Curtain with the name, lifts after ~1.5s (skipped for reduced motion) |
-| Global | Gradient scroll-progress bar; cursor-following glow (pointer:fine only) |
-| Hero | Word-by-word masked headline; layers parallax apart on scroll; floating tool badges; drifting gradient mesh |
-| Buttons | Magnetic lean toward the cursor, gradient sweep, arrow slide |
-| Nav | `layoutId` spring pill that travels between active links |
-| Cards | 3D tilt toward the cursor, radial sheen tracking the pointer, image scale, arrow swap |
-| Filters | Shared-layout pill; `AnimatePresence` on the grid |
-| Experience | Gradient timeline line that draws itself as the section scrolls |
-| Sections | Staggered children, not one blanket fade |
+All main sections and existing navigation targets remain available. The Work
+index filters 18 projects/collections across six disciplines. The original images
+are preserved, with 640px and 1440px WebP variants for presentation and extracted
+posters for the seven videos. See [the asset audit](docs/ASSET-AUDIT.md) for every
+included category and the reference bundles intentionally kept separate.
 
-Everything is transform/opacity. `prefers-reduced-motion` disables the curtain, the
-cursor glow, tilt, parallax and split-text, leaving static content.
+## Interaction and accessibility
 
-Timings to tune: `BASE` in `Hero.jsx` (entrance delay), the timeout in `Intro`,
-and the `gap` prop on `<Stagger>`.
+Hover a selected card to turn it; tap or press Enter on its front to show details.
+Use View project to open the gallery, and the return arrow to restore the artwork.
+Gallery arrow keys move between images, Escape closes a preview and focus returns
+to the opener. Native dialogs contain focus and prevent background interaction.
+The mobile menu uses the same accessible dialog system. Reduced-motion settings
+replace 3D rotation with immediate face changes and disable decorative motion.
+Videos load only when their viewer opens and never autoplay on the page.
 
-## Editing content
+## Contact configuration
 
-Everything is in `src/data/site.js`. Nothing is hardcoded in components.
+The original `hello@sreeruban.com` is retained, but is marked as a placeholder in
+`src/data/site.js`. Confirm the email and replace the `#` social URLs there before
+publishing. Social buttons appear automatically when real URLs are provided.
 
-- **Project images** — put files in `src/assets/`, import them, set `image:` on the project.
-  `image: null` renders a designed gradient placeholder.
-- **Card size** — each project has `size: 'wide' | 'tall' | 'regular'`, driving the
-  asymmetric 12-column grid. Reorder the array to re-compose the layout.
-- **Portrait** — two slots marked with a comment: `Hero.jsx` and `About.jsx`.
-- **Links** — `contact.socials` and `contact.email` are placeholders (`#`). Replace before deploy.
+## Verification
+
+The production build passes, and 48 interaction and asset checks pass. The
+production preview has no broken image requests, console errors, horizontal page
+overflow or video downloads before playback is requested. The redesign was
+checked in installed Chrome with desktop, tablet and mobile
+viewport emulation, including widths from 320px to 1920px. Checks cover section
+anchors, project filtering, hover and touch card flips, keyboard operation, modal
+focus and Escape, gallery navigation, video playback, reduced motion, asset URLs,
+console errors and horizontal page overflow. Local QA screenshots and scripts are
+ignored under `.local-qa/` and are not bundled with the application.

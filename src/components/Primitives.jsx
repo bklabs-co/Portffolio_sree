@@ -56,7 +56,7 @@ export function SplitText({ text, className = '', delay = 0, accentFrom = -1 }) 
   return (
     <span className={className}>
       {words.map((w, i) => (
-        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom">
+        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom" style={{ marginRight: i < words.length - 1 ? '0.18em' : undefined }}>
           <motion.span
             className={`inline-block ${accentFrom >= 0 && i >= accentFrom ? 'grad-text' : ''}`}
             initial={{ y: '110%', rotate: 2 }}
@@ -64,7 +64,7 @@ export function SplitText({ text, className = '', delay = 0, accentFrom = -1 }) 
             transition={{ duration: 0.75, delay: delay + i * 0.055, ease: EASE }}
           >
             {w}
-            {i < words.length - 1 && '\u00A0'}
+            {i < words.length - 1 && ' '}
           </motion.span>
         </span>
       ))}
@@ -82,6 +82,7 @@ export function Magnetic({ children, strength = 0.3, className = '' }) {
   if (reduce) return <div className={className}>{children}</div>
 
   const onMove = (e) => {
+    if (!window.matchMedia('(pointer: fine)').matches) return
     const r = ref.current.getBoundingClientRect()
     x.set((e.clientX - (r.left + r.width / 2)) * strength)
     y.set((e.clientY - (r.top + r.height / 2)) * strength)
@@ -103,12 +104,12 @@ export function Magnetic({ children, strength = 0.3, className = '' }) {
 
 export function Section({ id, label, title, lead, children, className = '' }) {
   return (
-    <section id={id} aria-labelledby={`${id}-t`} className={`py-20 sm:py-28 lg:py-36 ${className}`}>
+    <section id={id} aria-labelledby={`${id}-t`} className={`section ${className}`}>
       <div className="shell">
-        <Reveal className="mb-12 max-w-3xl sm:mb-16">
-          {label && <p className="eyebrow mb-4">{label}</p>}
-          <h2 id={`${id}-t`} className="text-[clamp(1.95rem,5.2vw,3.4rem)] font-bold">{title}</h2>
-          {lead && <p className="mt-5 max-w-[62ch] text-[clamp(0.975rem,1.6vw,1.075rem)] text-slate">{lead}</p>}
+        <Reveal className="section-heading">
+          {label && <p className="eyebrow">{label}</p>}
+          <h2 id={`${id}-t`}>{title}</h2>
+          {lead && <p className="section-lead">{lead}</p>}
         </Reveal>
         {children}
       </div>
@@ -118,7 +119,7 @@ export function Section({ id, label, title, lead, children, className = '' }) {
 
 export function Pill({ children }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-line bg-white/[0.02] px-3.5 py-1.5 text-[13px] text-slate transition-colors duration-300 hover:border-violet-accent/50 hover:text-ink">
+    <span className="pill">
       {children}
     </span>
   )

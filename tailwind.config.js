@@ -4,23 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Palette synced 1:1 with the reference static build (sree-ruban-portfolio.html)
-        void: '#0A0A0F',
-        surface: '#131319',
-        raised: '#191922',
-        card: '#15151C',
+        // Charcoal, ivory and warm orange shared with index.css.
+        void: '#141513',
+        surface: '#1C1D1A',
+        raised: '#262722',
+        card: '#20211E',
         line: 'rgba(255,255,255,0.08)',
-        'line-hover': 'rgba(139,116,246,0.45)',
-        ink: '#F2F2F5',
-        slate: { DEFAULT: '#96969F', dim: '#68687A' },
-        indigo: { accent: '#6366F1' },
-        violet: { accent: '#A855F7' },
+        'line-hover': 'rgba(247,148,99,0.5)',
+        ink: '#EEEFE7',
+        slate: { DEFAULT: '#ADB0A5', dim: '#92968B' },
+        indigo: { accent: '#F79463' },
+        violet: { accent: '#F79463' },
       },
       fontFamily: {
         display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      maxWidth: { shell: '1280px' },
+      maxWidth: { shell: '1440px' },
       borderRadius: { xl2: '22px' },
     },
   },
