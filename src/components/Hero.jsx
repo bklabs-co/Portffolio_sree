@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="art-stamp" aria-hidden><Asterisk size={32}/><span>Ideas into<br/>experiences.</span></div>
         </motion.div>
       </div>
-      <motion.div {...entrance(0.8)} className="hero-bottom"><a href="#work" className="text-link"><ArrowDown size={16}/> Scroll to explore</a><p>Based in <span>Coimbatore, India</span></p><span className="hero-disciplines">Visual design · Video · Digital experiences</span></motion.div>
+      <motion.div {...entrance(0.8)} className="hero-bottom"><a href="#work" className="text-link"><ArrowDown size={16}/> Scroll to explore</a><p>Based in <span>Chennai, India</span></p><span className="hero-disciplines">Visual design · Video · Digital experiences</span></motion.div>
     </div>
   </section>
 }

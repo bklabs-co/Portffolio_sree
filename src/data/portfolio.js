@@ -1,4 +1,7 @@
 import previewMap from './asset-previews.json'
+import profileImage from '../assets/Portfolio Project Assets/Profile pic/Sree ruban Profile image.png'
+import agencyImage from '../assets/Portfolio Project Assets/Added/Creaitve Agency UI design.png'
+import videoPlatformImage from '../assets/Portfolio Project Assets/Added/1920w light (3).png'
 // Originals stay untouched; WebP variants and extracted video posters serve the UI.
 const originals = import.meta.glob([
   '../assets/Portfolio Project Assets/Graphics Design/*.{jpg,jpeg,png}',
@@ -27,13 +30,18 @@ const graphic = (file, alt) => image('Graphics Design', file, alt)
 const fresh = (file, alt) => image('New', file, alt)
 const ui = (file, alt) => image('UI-UX Design', file, alt)
 
-export const portrait = graphic('1690378510655.jpg.jpeg', 'Portrait of Sree Ruban')
+const addedImage = (name, original, alt) => ({ aspect: {profile: 1672 / 940, agency: 2 / 3, 'video-platform': 11817 / 1926}[name], srcSet: `${previews[`../assets/portfolio/optimized/added-${name}-640.webp`]} 640w, ${previews[`../assets/portfolio/optimized/added-${name}-1440.webp`]} ${{profile: 940, agency: 1440, 'video-platform': 978}[name]}w`, src: previews[`../assets/portfolio/optimized/added-${name}-1440.webp`], thumbnail: previews[`../assets/portfolio/optimized/added-${name}-640.webp`], original, alt })
+export const portrait = addedImage('profile', profileImage, 'Portrait of Sree Ruban')
 export const interfaceProjects = [
   { id: 'apex', title: 'Apex', category: 'UI / UX', subtitle: 'A digital studio, thoughtfully framed.', summary: 'A dark, typography-led digital agency landing page with service highlights, a clear call to action and a layered visual direction.', tags: ['Landing page', 'Visual hierarchy', 'UI design'], images: [ui('Apex.png', 'Apex digital agency landing page design')], theme: 'blue' },
   { id: 'nike', title: 'Nike / Infinite scroll', category: 'UI / UX', subtitle: 'An interface built around the product.', summary: 'A footwear storefront concept using a restrained palette, generous spacing and a product-first horizontal composition.', tags: ['E-commerce', 'Interface concept'], images: [ui('NIKE INFINITE SCROLL.png', 'Nike Air Jordan storefront interface concept')], theme: 'light' },
   { id: 'dashboard', title: 'Analytics dashboard', category: 'UI / UX', subtitle: 'Complex information. Clear decisions.', summary: 'A dashboard interface bringing performance metrics, charting and day-to-day activity into one readable workspace.', tags: ['Dashboard', 'Information design'], images: [ui('Desktop - 1.png', 'Analytics dashboard with metrics, charts and activity panels')], theme: 'mint' },
   { id: 'vfeed', title: 'VFeed / Web experience', category: 'UI / UX', subtitle: 'An entire experience, from top to bottom.', summary: 'A full-length website interface exploring content hierarchy, product presentation and a connected visual system.', tags: ['Web design', 'Long-form layout'], images: [ui('1920w light (2).png', 'Full-length VFeed website interface design')], theme: 'light' },
   { id: 'airpods', title: 'AirPods / Scroll study', category: 'UI / UX', subtitle: 'Product storytelling in motion.', summary: 'A collection of dark product interface frames exploring parallax and scrolling presentation for AirPods.', tags: ['Scroll concept', 'Product design'], images: [ui('Parallax & Scrolling animation.png', 'AirPods product interface frames for a parallax and scrolling study')], theme: 'dark' },
+]
+export const addedProjects = [
+  { id: 'creative-agency-study', title: 'Creative agency / Interface study', category: 'UI / UX', summary: 'A dark creative agency interface exploring bold typography, blue accents and a sculptural hero composition.', tags: ['Interface study', 'Web design'], images: [addedImage('agency', agencyImage, 'Creative agency interface with blue orbital graphics and a bold headline')] },
+  { id: 'video-platform-study', title: 'AI video platform / Web study', category: 'UI / UX', summary: 'A full-length video platform interface bringing editing tools, avatar features and product storytelling into a light, structured layout.', tags: ['Landing page', 'UI design'], images: [addedImage('video-platform', videoPlatformImage, 'Full-length AI video platform landing page with editing tools and avatar features')] },
 ]
 export const visualCollections = [
   { id: 'product-visuals', title: 'Product / In a different light', category: 'Image Editing', summary: 'Product-focused compositions using light, colour, typography and a considered visual hierarchy.', tags: ['Product visuals', 'Compositing'], images: [graphic('Product Images.jpg', 'Green skincare serum advertisement with citrus and botanical details'), graphic('Product Images 2.jpg', 'Minimal green botanical product composition')] },
@@ -62,6 +70,6 @@ export const videoProjects = videoData.map(([id, title, file, summary, category,
   id, title, summary, category, duration, tags: ['Video', category], video: asset('Video editing', file),
   images: [{ src: posters[`../assets/portfolio/video-posters/video-${i + 1}.jpg`], alt: `Frame from ${title}` }],
 }))
-export const portfolioProjects = [...interfaceProjects, ...visualCollections, ...brandProjects, ...videoProjects]
+export const portfolioProjects = [...interfaceProjects, ...addedProjects, ...visualCollections, ...brandProjects, ...videoProjects]
 export const portfolioCategories = ['All', 'UI / UX', 'Graphic Design', 'Image Editing', 'Branding', 'Video Editing', 'Motion Design']
 export const heroArt = { product: visualCollections[0].images[0], watch: visualCollections[1].images[0], interface: interfaceProjects[0].images[0] }

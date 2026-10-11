@@ -37,11 +37,12 @@ export function Stagger({ children, className = '', gap = 0.07, as = 'div' }) {
   )
 }
 Stagger.Item = function Item({ children, className = '', as = 'div', y = 22 }) {
+  const reduce = useReducedMotion()
   const M = motion[as] || motion.div
   return (
     <M
       className={className}
-      variants={{ hidden: { opacity: 0, y }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } }}
+      variants={{ hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : y }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } }}
     >
       {children}
     </M>

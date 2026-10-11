@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // Single source of truth for all site content.
 // Content carried over from the existing portfolio.
-// Contact values are retained from the existing portfolio; confirm them before publishing.
+// Contact details supplied by Sree Ruban.
 // ─────────────────────────────────────────────────────────────
 
 export const profile = {
@@ -12,18 +12,18 @@ export const profile = {
   headline: ['I design visuals.', 'I edit stories.', 'I make ideas move.'],
   intro:
     "I'm Sree Ruban — a visual designer, video editor and motion designer with 2+ years of hands-on experience across branding, social media, video, UI/UX and digital experiences.",
-  location: 'Coimbatore, Tamil Nadu, India',
+  location: 'Chennai',
   years: '2+',
 }
 
 export const about = {
   paragraphs: [
-    "I'm a creative professional from Kanyakumari, currently based in Coimbatore. My work sits at the intersection of visual design, video editing, motion and digital experiences.",
+    "I'm a creative professional from Kanyakumari, currently based in Chennai. My work sits at the intersection of visual design, video editing, motion and digital experiences.",
     "Over the last two years I've worked on real client and business requirements — wedding and corporate video, branding, social media creatives, product visuals, UI concepts and web design. I like turning rough ideas into clear, purposeful visual communication.",
     "I'm now focused on growing into an IT and product-oriented creative role, where design, technology and visual storytelling come together.",
   ],
   facts: [
-    { label: 'Based in', value: 'Coimbatore, Tamil Nadu' },
+    { label: 'Based in', value: 'Chennai' },
     { label: 'Experience', value: '2+ years' },
     { label: 'Focus', value: 'Visual design, video & UI/UX' },
     { label: 'Looking for', value: 'Creative + product roles' },
@@ -84,10 +84,10 @@ export const skills = [
   { group: 'Practice', items: ['Wireframing', 'Prototyping', 'Visual direction', 'Client delivery'] },
 ]
 
-// TODO: replace placeholder hrefs and email with real details.
+// Social links stay hidden until destinations are provided.
 export const contact = {
-  email: 'hello@sreeruban.com',
-  phone: 'Available on request',
+  email: 'sreeruban02@gmail.com',
+  phone: '9150483403',
   socials: [
     { label: 'LinkedIn', href: '#' },
     { label: 'Behance', href: '#' },
@@ -103,3 +103,6 @@ export const navLinks = [
   { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ]
+
+export const internship = { company: 'Avatar 360 Studio', role: 'Graphic Design Intern', period: 'January ? April' }
+export const creativeTechnology = ['Generative AI', 'Prompt Engineering', 'AI-Assisted Visual Design', 'Image Generation', 'Creative Ideation', 'AI Image Editing', 'Product Visualization', 'AI Video']
