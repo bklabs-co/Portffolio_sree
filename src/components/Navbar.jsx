@@ -12,7 +12,7 @@ export default function Navbar() {
   return <>
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <nav aria-label="Primary" className="shell nav-inner">
-        <a href="#home" className="wordmark" aria-label={`${profile.name}, home`}><span className="monogram">{profile.initials}<span>.</span></span><span>{profile.name}<small>Independent creative</small></span></a>
+        <a href="#home" className="wordmark" aria-label={`${profile.name}, home`}><span className="monogram">{profile.initials}<span>.</span></span><span>{profile.name}<small>Creative designer and video editor</small></span></a>
         <ul className="desktop-nav">{navLinks.map(link => <li key={link.id}><a href={`#${link.id}`} aria-current={active === link.id ? 'location' : undefined}>{link.label}</a></li>)}</ul>
         <a className="nav-cta text-link" href="#contact">Let's talk <ArrowUpRight size={17}/></a>
         <button type="button" className="icon-button menu-toggle" aria-label="Open menu" aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(true)}><Menu size={22}/></button>

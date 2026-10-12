@@ -11,10 +11,10 @@ export default function Work() {
   const open = useMediaViewer()
   const featured = interfaceProjects[0]
   const visible = filter === 'All' ? portfolioProjects : portfolioProjects.filter(project => project.category === filter)
-  return <Section id="work" label="02 / Selected work" title={<>Different mediums.<br/><span className="accent-text">Same attention to detail.</span></>} lead="A selection of interfaces, brand identities, visual campaigns and stories in motion.">
+  return <Section id="work" label="02 - Selected work" title={<>Different mediums.<br/><span className="accent-text">Same attention to detail.</span></>} lead="A selection of interfaces, brand identities, visual campaigns and stories in motion.">
     <Reveal><button type="button" className="featured-project" onClick={() => open(featured)} aria-label="View Apex interface design">
-      <div className="featured-copy"><span className="eyebrow">Featured / UI & digital experiences</span><h3>{featured.title}<span>Turning ideas<br/>into interfaces.</span></h3><p>{featured.summary}</p><span className="text-link">Explore the design <ArrowUpRight size={18}/></span><span className="featured-index" aria-hidden>01—05</span></div>
-      <Tilt className="featured-image" intensity={2}><div className="browser-bar" aria-hidden><span/><span/><span/><small>Apex / Landing page</small><ArrowUpRight size={13}/></div><img src={featured.images[0].src} srcSet={featured.images[0].srcSet} sizes="(max-width: 639px) 90vw, 50vw" alt={featured.images[0].alt} loading="lazy" decoding="async"/></Tilt>
+      <div className="featured-copy"><span className="eyebrow">Featured - UI & digital experiences</span><h3>{featured.title}<span>Turning ideas<br/>into interfaces.</span></h3><p>{featured.summary}</p><span className="text-link">Explore the design <ArrowUpRight size={18}/></span><span className="featured-index" aria-hidden>01—05</span></div>
+      <Tilt className="featured-image" intensity={2}><div className="browser-bar" aria-hidden><span/><span/><span/><small>Apex - Landing page</small><ArrowUpRight size={13}/></div><img src={featured.images[0].src} srcSet={featured.images[0].srcSet} sizes="(max-width: 639px) 90vw, 50vw" alt={featured.images[0].alt} loading="lazy" decoding="async"/></Tilt>
     </button></Reveal>
     <Reveal className="work-subheading"><h3>A closer look.</h3><p>Hover to turn. Tap to explore.</p></Reveal>
     <Stagger className="rotating-cards">{[visualCollections[1], interfaceProjects[1], brandProjects[0]].map((project, i) => <Stagger.Item key={project.id}><ProjectCard project={project} index={i}/></Stagger.Item>)}</Stagger>

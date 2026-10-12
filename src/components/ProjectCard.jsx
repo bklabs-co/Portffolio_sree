@@ -26,7 +26,7 @@ export default function ProjectCard({ project, index = 0 }) {
       <div className="flip-inner">
         <div className="card-face card-front" aria-hidden={flipped} {...(flipped ? { inert: '' } : {})}>
           <img src={project.images[0].src} srcSet={project.images[0].srcSet} sizes="(max-width: 639px) 90vw, 50vw" alt={project.images[0].alt} loading="lazy" decoding="async" />
-          <div className="card-front-copy"><span className="eyebrow">{project.category} / {String(index + 1).padStart(2, '0')}</span><h3>{project.title}</h3></div>
+          <div className="card-front-copy"><span className="eyebrow">{project.category} - {String(index + 1).padStart(2, '0')}</span><h3>{project.title}</h3></div>
           <button ref={frontButton} type="button" className="card-flip-trigger" aria-label={`Show details for ${project.title}`} onClick={showDetails}><span className="card-hint">Explore <ArrowUpRight size={16}/></span></button>
         </div>
         <div className="card-face card-back" aria-hidden={!flipped} {...(!flipped ? { inert: '' } : {})} onFocusCapture={() => setPinned(true)}>

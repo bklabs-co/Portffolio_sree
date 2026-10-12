@@ -26,7 +26,7 @@ function Gallery({ project, startIndex, onClose }) {
         : <img src={project.images[index].src} alt={project.images[index].alt} decoding="async" />}
     </div>
     {!project.video && <div className="viewer-controls">
-      <p aria-live="polite">{project.images[index].alt}<span>{String(index + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}</span></p>
+      <p aria-live="polite">{project.images[index].alt}<span>{String(index + 1).padStart(2, '0')} - {String(count).padStart(2, '0')}</span></p>
       {count > 1 && <div className="flex gap-2"><button type="button" className="icon-button" onClick={() => navigate(-1)} aria-label="Previous image"><ChevronLeft size={20}/></button><button type="button" className="icon-button" onClick={() => navigate(1)} aria-label="Next image"><ChevronRight size={20}/></button></div>}
       {project.images[index].aspect <= 3 && <button type="button" className="icon-button" aria-label={zoomed ? 'Fit image' : 'Zoom image'} aria-pressed={zoomed} onClick={() => setZoomed(value => !value)}>{zoomed ? <ZoomOut size={18}/> : <ZoomIn size={18}/>}</button>}
       <a className="text-link" href={project.images[index].original || project.images[index].src} target="_blank" rel="noreferrer">Original image <ExternalLink size={14} /></a>

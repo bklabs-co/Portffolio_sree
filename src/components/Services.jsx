@@ -5,7 +5,7 @@ export default function Services() {
   return (
     <Section
       id="services"
-      label="06 / What I bring to the table"
+      label="06 - What I bring to the table"
       title={
         <>
           A connected

@@ -1152,3 +1152,5 @@
 .profile-visual {
   overflow: hidden;
 }
+
+.software-monogram { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-bottom: 24px; border: 1px solid var(--line); border-radius: 12px; color: var(--accent); font-size: 22px; font-weight: 600; }

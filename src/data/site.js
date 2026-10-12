@@ -1,74 +1,104 @@
 // ─────────────────────────────────────────────────────────────
 // Single source of truth for all site content.
 // Content carried over from the existing portfolio.
-// Contact details supplied by Sree Ruban.
+// Contact details supplied by Sreeruban.
 // ─────────────────────────────────────────────────────────────
 
 export const profile = {
-  name: "Sree Ruban",
+  name: "Sreeruban",
   initials: "SR",
   role: "Visual Designer × Video Editor × Motion Designer",
   availability: "Available for creative & product design roles",
   headline: ["I design visuals.", "I edit stories.", "I make ideas move."],
   intro:
-    "I'm Sree Ruban — a visual designer, video editor and motion designer with 2+ years of hands-on experience across branding, social media, video, UI/UX and digital experiences.",
-  location: "Chennai",
-  years: "2+",
+    "I’m Sreeruban, a Visual Designer, Video Editor, and Motion Designer with 2+ years of hands-on experience and nearly 2 years of professional experience. I create purposeful visual experiences that bring ideas to life, blending creativity, design, motion, and storytelling across branding, social media, video, UI - UX, and digital experiences.",
+  location: "Coimbatore",
+  years: "2",
 };
 
 export const about = {
   paragraphs: [
-    "I'm a creative professional from Kanyakumari, currently based in Chennai. My work sits at the intersection of visual design, video editing, motion and digital experiences.",
-    "Over the last two years I've worked on real client and business requirements — wedding and corporate video, branding, social media creatives, product visuals, UI concepts and web design. I like turning rough ideas into clear, purposeful visual communication.",
-    "I'm now focused on growing into an IT and product-oriented creative role, where design, technology and visual storytelling come together.",
-  ],
+  "I’m a Creative Designer from Kanyakumari, currently based in Coimbatore, with almost 2 years of professional experience and 3+ years of hands-on experience with industry-standard design and creative tools.",
+  "My work spans Graphic Design, Visual Design, Video Editing, Motion Design, Branding, Social Media, UI - UX and Digital Experiences. I’ve worked on real-world client and business requirements, creating everything from brand identities, social media creatives and product visuals to wedding and corporate videos, UI concepts and web designs.",
+  "I enjoy transforming ideas and requirements into clear, engaging and purposeful visual communication. With a strong interest in both creativity and technology, I’m focused on building my career in IT and product-oriented creative roles, where design, digital experiences and visual storytelling come together."
+],
   facts: [
-    { label: "Based in", value: "Chennai" },
-    { label: "Experience", value: "2+ years" },
-    { label: "Focus", value: "Visual design, video & UI/UX" },
+    { label: "Based in", value: "Coimbatore" },
+    { label: "Experience", value: "2 years" },
+    { label: "Focus", value: "Creative design and video editing" },
     { label: "Looking for", value: "Creative + product roles" },
   ],
   tools: [
-    "Premiere Pro",
-    "After Effects",
-    "Photoshop",
-    "Illustrator",
-    "Figma",
-    "DaVinci Resolve",
-  ],
+  "Adobe Photoshop",
+  "Adobe Illustrator",
+  "Adobe InDesign",
+  "Adobe Premiere Pro",
+  "Adobe After Effects",
+  "Figma",
+  "DaVinci Resolve",
+  "Canva",
+  "Adobe Firefly",
+  "Midjourney"
+],
 };
 
 export const services = [
   {
-    title: "Video editing",
-    body: "Wedding highlights, corporate films, reels, testimonials, promotional edits and social-first cuts.",
-    tags: ["Premiere Pro", "Storytelling", "Sound design"],
+    "title": "Video Editing",
+    "body": "Wedding highlights, corporate films, reels, testimonials, promotional edits and social-first cuts.",
+    "tags": [
+      "Premiere Pro",
+      "DaVinci Resolve"
+    ]
   },
   {
-    title: "Motion design",
-    body: "Kinetic typography, title animation, transitions, product visuals and social motion graphics.",
-    tags: ["After Effects", "Animation", "Compositing"],
+    "title": "Motion Design",
+    "body": "Kinetic typography, title animation, transitions, product visuals and social motion graphics.",
+    "tags": [
+      "After Effects",
+      "Premiere Pro"
+    ]
   },
   {
-    title: "Graphic & brand design",
-    body: "Logos, brand identity, social creatives, posters, brochures and campaign collateral.",
-    tags: ["Photoshop", "Illustrator", "Branding"],
+    "title": "Graphic & Brand Design",
+    "body": "Logos, brand identity, social creatives, posters, brochures and campaign collateral.",
+    "tags": [
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "Canva"
+    ]
   },
   {
-    title: "UI / UX design",
-    body: "Wireframes, landing pages and app concepts built around hierarchy, usability and clarity.",
-    tags: ["Figma", "Wireframes", "Prototyping"],
+    "title": "UI - UX Design",
+    "body": "Wireframes, landing pages and app concepts built around hierarchy, usability and clarity.",
+    "tags": [
+      "Figma",
+      "Adobe XD"
+    ]
   },
   {
-    title: "Web & front-end",
-    body: "Responsive website concepts and front-end builds with HTML, CSS, JavaScript and React.",
-    tags: ["HTML/CSS", "JavaScript", "React"],
+    "title": "Web & Front-End",
+    "body": "Responsive website concepts and front-end builds with HTML, CSS, JavaScript and React.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React"
+    ]
   },
   {
-    title: "Creative production",
-    body: "Brief to delivery — concept development, visual direction, asset prep and production support.",
-    tags: ["Creative direction", "Visual storytelling", "Production"],
-  },
+    "title": "AI & Creative Production",
+    "body": "AI-assisted concept development, visual ideation, prompt engineering, image generation, creative exploration and production support to turn ideas into refined visual content.",
+    "tags": [
+      "Adobe Firefly",
+      "Midjourney",
+      "ChatGPT",
+      "Leonardo AI",
+      "Runway",
+      "Krea AI"
+    ]
+  }
 ];
 
 export {
@@ -78,45 +108,65 @@ export {
 
 export const experience = [
   {
-    period: "Apr 2025 — Present",
-    role: "Graphic Designer & Video Editor",
-    company: "Freddyfish Events & Photography",
-    summary:
-      "Creating visual content across graphic design, branding, digital marketing, social media and video production.",
-    points: [
-      "Design logos, brand identities, brochures, advertisements and social media creatives.",
-      "Edit wedding highlights, reels, corporate videos, testimonials and event content.",
-      "Develop motion-led visuals, B-roll sequences and social-first edits.",
-      "Work with clients from brief through final delivery.",
+    "period": "Apr 2025 – Present",
+    "role": "Graphic Designer & Video Editor",
+    "company": "Freddyfish Events & Photography",
+    "summary": "Create engaging visual content for branding, digital marketing, social media, and event promotions.",
+    "points": [
+      "Design logos, brand identities, brochures, advertisements, and print and digital marketing materials.",
+      "Edit wedding highlights, corporate videos, promotional reels, and event content using professional editing tools.",
+      "Develop motion graphics, transitions, B-roll sequences, and platform-specific video content.",
+      "Collaborate with clients to manage creative briefs, revisions, and final deliverables."
     ],
-    stack: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
+    "stack": [
+      "Photoshop",
+      "Illustrator",
+      "Premiere Pro",
+      "After Effects"
+    ]
   },
   {
-    period: "Freelance / project-based",
-    role: "Freelance Designer & Video Editor",
-    company: "Independent creative work",
-    summary:
-      "Handling design and editing requirements directly with clients — briefs, revisions, deadlines and final exports.",
-    points: [
-      "Video editing for events, weddings, social media and promotional content.",
-      "Graphic design for digital campaigns, branding and marketing assets.",
-      "UI/UX and web design work bridging visual design and digital products.",
+    "period": "Project-Based",
+    "role": "Freelance Graphic Designer & Video Editor",
+    "company": "Self-Employed",
+    "summary": "Deliver creative solutions for branding, social media, video editing, and digital marketing projects.",
+    "points": [
+      "Design logos, promotional creatives, posters, brochures, and brand identity materials.",
+      "Edit event videos, promotional content, social media reels, and short-form videos.",
+      "Create UI - UX designs, wireframes, and responsive web layouts for digital projects.",
+      "Manage client communication, project timelines, feedback, and final deliverables independently."
     ],
-    stack: ["Figma", "DaVinci Resolve", "HTML/CSS"],
+    "clients": [
+      "The Wedding Roots",
+      "The Goat Outfits",
+      "Sri Madanik Jewellery",
+      "DP Holidays"
+    ],
+    "stack": [
+      "Photoshop",
+      "Illustrator",
+      "Figma",
+      "DaVinci Resolve",
+      "HTML - CSS"
+    ]
   },
   {
-    period: "January — April",
-    role: "Graphic Design Intern",
-    company: "Avatar 360 Studio",
-    summary:
-      "Supported studio creative work with branding, design execution and visual production tasks in a fast-paced internship environment.",
-    points: [
-      "Designed social media creatives and visual assets for ongoing campaigns and client work.",
-      "Assisted with brand-related design tasks and polished marketing materials.",
-      "Collaborated with the studio team on creative production and presentation-ready outputs.",
+    "period": "Jan 2025 – Apr 2025",
+    "role": "Graphic Design & UI - UX Intern",
+    "company": "Avatar 360, Coimbatore",
+    "summary": "Designed social media creatives, promotional graphics, and digital marketing assets for various brands.",
+    "points": [
+      "Created user interfaces, wireframes, and interactive prototypes for web and mobile applications.",
+      "Applied typography, visual hierarchy, layout principles, and responsive design techniques.",
+      "Collaborated on creative projects to develop visually appealing and user-friendly digital experiences."
     ],
-    stack: ["Photoshop", "Illustrator", "Branding", "Creative workflow"],
-  },
+    "stack": [
+      "Figma",
+      "Adobe XD",
+      "Photoshop",
+      "Illustrator"
+    ]
+  }
 ];
 
 export const process = [
@@ -155,6 +205,9 @@ export const skills = [
       "Photoshop",
       "Illustrator",
       "Figma",
+      "InDesign",
+      "Canva",
+      "Adobe XD",
       "Brand identity",
       "Typography",
     ],
